@@ -3,7 +3,6 @@ import { createNavbar } from './components/Navbar'
 import { createMenu } from './components/Menu'
 import { createReviews } from './components/Reviews'
 import { createFooter } from './components/Footer'
-import { createFAQ } from './components/FAQ'
 import { createPrivacyPolicy } from './components/PrivacyPolicy'
 import { createTermsOfService } from './components/TermsOfService'
 
@@ -56,7 +55,6 @@ function render() {
       </section>
       ${createMenu()}
       ${createReviews()}
-      ${createFAQ()}
       ${createFooter()}
     `
     setupHomeListeners()
@@ -175,19 +173,6 @@ function setupHomeListeners() {
           if (descEl) descEl.textContent = (item as HTMLElement).dataset.singleDesc || ''
         }
       })
-    })
-  })
-
-  // FAQ Toggle Logic
-  const faqItems = document.querySelectorAll('.faq-item')
-  faqItems.forEach(item => {
-    const questionWrapper = item.querySelector('.faq-question-wrapper')
-    questionWrapper?.addEventListener('click', () => {
-      const isActive = item.classList.contains('active')
-      faqItems.forEach(i => i.classList.remove('active'))
-      if (!isActive) {
-        item.classList.add('active')
-      }
     })
   })
 
