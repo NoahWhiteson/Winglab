@@ -622,7 +622,7 @@ body {
 /* Footer Section Styles */
 .order-cta-section {
   padding: clamp(6rem, 15vw, 10rem) 2rem;
-  background-color: #0F0F0F;
+  background-color: #000000;
   text-align: center;
 }
 
@@ -663,9 +663,33 @@ body {
 }
 
 .main-footer {
-  background-color: #000000;
+  background-color: #0f0f0f;
   padding: 6rem 2rem 2rem;
-  border-top: 1px solid #222;
+  position: relative;
+  z-index: 1;
+}
+
+.main-footer::before,
+.main-footer::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.main-footer::before {
+  left: 0;
+  box-shadow: -40px 40px 0 0 #0f0f0f;
+  border-bottom-left-radius: 40px;
+}
+
+.main-footer::after {
+  right: 0;
+  box-shadow: 40px 40px 0 0 #0f0f0f;
+  border-bottom-right-radius: 40px;
 }
 
 .footer-grid {
